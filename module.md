@@ -76,6 +76,7 @@ Note that `IM` stands for Individual Module and `TP` stands for Team Project.
 | Jun 28 | 10:30      | IM       | Started a new project directory in Python, I've decided to move to that language for now.                         | 0:15          |
 | Jun 29 | 12:00      | IM       | Started learning the curses library so I can make a text interface for my text game                               | 1:00          |
 | Jun 29 | 5:30       | IM       | Spent some time making classes for easier interaction with terminal windows from the curses library               | 1:00          |
+| Jul 2  | 3:30       | IM       | Worked on the parser functions                                                                                    | 0:30          |
 |        |            |          |                                                                                                                   |               |
 
 _Note: Add more rows as needed._
