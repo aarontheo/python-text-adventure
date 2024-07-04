@@ -1,6 +1,7 @@
 {
-    "desc": "A dark cave. The air is damp and the sound of dripping water echoes through the chamber.",
-    "shortdesc": "Dark Cave",
-    "contents": [],
+    "name": "The name of the room.",
+    "desc": "A long description of the room.",
+    "shortdesc": "A short description for the room.",
+    "contents": ["a list", "of the various", "registered ids", "of Things in the room."],
     "doors": []
 }

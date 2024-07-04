@@ -1,7 +1,9 @@
 {
-    "desc": "a small grey rock about the size of your palm",
+    "traits": ["IS_WEAPON", "HAS_HP"],
+    "name": "small rock",
+    "desc": "a rough grey rock about the size of your palm",
     "shortdesc": "a small rock",
-    "hp": 10,
     "damage": 1,
-    "size": 1
+    "size": 1,
+    "shoots": "a bullet"
 }

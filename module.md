@@ -68,16 +68,20 @@ Record all CSE 310 work that you do on your individual module or the team projec
 
 Note that `IM` stands for Individual Module and `TP` stands for Team Project.  
 
-| Date   | Start Time | IM or TP | Description                                                                                                       | Hours:Minutes |
-| ------ | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------- | ------------- |
-| Jun 24 | 10:15      | IM       | Worked on the client and server connecting                                                                        | 1:00          |
-| Jun 24 | 12:30      | IM       | Got client/server nodes to connect, message passed from client node to server.                                    | 0:30          |
-| Jun 25 | 10:00      | IM       | Successfully made a start.sh script for the server, which configures everything and runs the start_link function. | 0:45          |
-| Jun 28 | 10:30      | IM       | Started a new project directory in Python, I've decided to move to that language for now.                         | 0:15          |
-| Jun 29 | 12:00      | IM       | Started learning the curses library so I can make a text interface for my text game                               | 1:00          |
-| Jun 29 | 5:30       | IM       | Spent some time making classes for easier interaction with terminal windows from the curses library               | 1:00          |
-| Jul 2  | 3:30       | IM       | Worked on the parser functions                                                                                    | 0:30          |
-|        |            |          |                                                                                                                   |               |
+| Date   | Start Time | IM or TP | Description                                                                                                                        | Hours:Minutes |
+| ------ | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| Jun 24 | 10:15      | IM       | Worked on the client and server connecting                                                                                         | 1:00          |
+| Jun 24 | 12:30      | IM       | Got client/server nodes to connect, message passed from client node to server.                                                     | 0:30          |
+| Jun 25 | 10:00      | IM       | Successfully made a start.sh script for the server, which configures everything and runs the start_link function.                  | 0:45          |
+| Jun 28 | 10:30      | IM       | Started a new project directory in Python, I've decided to move to that language for now.                                          | 0:15          |
+| Jun 29 | 12:00      | IM       | Started learning the curses library so I can make a text interface for my text game                                                | 1:00          |
+| Jun 29 | 5:30       | IM       | Spent some time making classes for easier interaction with terminal windows from the curses library                                | 1:00          |
+| Jul 2  | 3:30       | IM       | Worked on the parser functions                                                                                                     | 0:30          |
+| Jul 3  | 12:40      | IM       | Started on classes, like Registry, Room, and Thing.                                                                                | 0:30          |
+| Jul 3  | 8:00       | IM       | Researched the way that Python classes are assembled, started working towards a trait system as opposed to inheritance.            | 2:30          |
+| Jul 4  | 9:30       | IM       | Continued research, implemented a system that lets me define 'trait' classes with custom methods and give them to Thing instances. | 2:00          |
+| Jul 4  | 12:00      | IM       | Still working on it, the class trait system is working! I'm trying now to implement required attributes for Traits.                | 1:45          |
+|        |            |          |                                                                                                                                    |               |
 
 _Note: Add more rows as needed._
 

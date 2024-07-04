@@ -1,0 +1,12 @@
+{
+    "name": "The name of the object, what is used to manipulate it.",
+    "type": "the class name of the thing.",
+    "traits": [
+        "any traits that the thing has should go here."
+    ],
+    "desc": "long description of the object, such as when examined.",
+    "shortdesc": "short description shown when not directly examined.",
+    "hp": 10,
+    "damage": 1,
+    "size": "An integer amount, only if the Thing can be taken."
+}

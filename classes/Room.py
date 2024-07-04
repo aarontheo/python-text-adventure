@@ -11,7 +11,7 @@ class Room():
     def __init__(self, json_path:str) -> None:
         with open(json_path, 'r') as file:
             JSON_data = json.load(file)
-            print(JSON_data)
+            # print(JSON_data)
         
         for attr in JSON_data:
             setattr(self, attr, JSON_data[attr])

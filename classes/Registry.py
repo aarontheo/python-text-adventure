@@ -18,3 +18,6 @@ class Registry():
         
     def get(self, identifier):
         return self.registered.get(identifier, None)
+    
+    def __getitem__(self, id):
+        return self.registered[id]

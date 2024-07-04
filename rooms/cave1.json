@@ -2,5 +2,5 @@
     "desc": "A dark cave. The air is damp and the sound of dripping water echoes through the chamber.",
     "shortdesc": "Dark Cave",
     "contents": [],
-    "doors": []
+    "doors": {}
 }
