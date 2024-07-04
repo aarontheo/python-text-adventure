@@ -7,8 +7,9 @@ def main():
     obj1 = Thing('things/rock.json')
     # print(obj1.__getstate__())
     obj2 = Thing("things/rock.json")
-    # print(obj1.harm(obj2))
-    print(obj1.hp)
+    print(obj1.attack(obj2))
+    print(obj1.attack(obj2))
+    print(obj2.look())
     
 if __name__ == '__main__':
     main()

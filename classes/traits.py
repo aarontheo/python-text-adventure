@@ -3,8 +3,6 @@ import inspect
 from types import MethodType
 
 
-
-
 """
 Traits are classes that implement methods, which add behaviors that can be used with Things.
 Traits also have required attributes.
@@ -15,6 +13,7 @@ class Trait():
 class HAS_HP():
     req_attributes = [
         'hp',
+        'maxhp'
     ]
     
     def harm(self, damage:int):
@@ -31,11 +30,16 @@ class HAS_HP():
             return "damaged"
         else:
             return "destroyed"
+        
+    def look(self):
+        if self.hp/self.maxhp < 1:
+            return f"{self.desc}. It is {self.status()}."
+        else:
+            return (self.desc+'.').capitalize()
+            
 
 class IS_LIVING():
-    req_attributes = [
-        'hp',
-    ]
+    req_attributes = HAS_HP.req_attributes
     
     def status(self):
         health = self.hp/self.maxhp

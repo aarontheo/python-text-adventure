@@ -4,41 +4,6 @@ import inspect
 from types import MethodType
 
 
-"""
-These are functions that manipulate class methods, allowing for traits rather than inheritance.
-"""
-def hasattr(obj:object, name:str):
-    pass
-
-def get_class(class_path:str) -> type:
-    module_name, class_name = class_path.rsplit('.', 1)
-    module = importlib.import_module(module_name, package="classes")
-    cls = getattr(module, class_name)
-    return cls
-
-def get_class_methods(cls:type) -> list[classmethod]:
-    methods = []
-    for name, attr in cls.__dict__.items():
-        if inspect.isfunction(attr) or inspect.ismethod(attr):
-            methods.append((name, attr))
-    return methods
-
-def assert_instance_attributes(cls:type, instance:object):
-    if attrs := cls.req_attributes:
-        for attr in attrs:
-            if not hasattr(instance, attr):
-                raise MissingAttributeException(attr)
-
-def add_methods_to_instance(instance:object, method_list:list):
-    for (name, method) in method_list:
-        bound_method = MethodType(method, instance)
-        setattr(instance, name, bound_method)
-
-class MissingAttributeException(Exception):
-    def __init__(self, attr) -> None:
-        super().__init__(f"Object {self} is missing attribute {attr}")
-
-
 '''
 Things are the pieces of the game that are acted upon.
 to perform an action on a thing, simply call the action as a verb with the indirect/instrumental object as the argument.
@@ -88,8 +53,41 @@ class Thing():
     def harm(self, damage:int):
         return f"You attack the {self.name}, to no avail."
     
+    def look(self):
+        return self.desc.capitalize()
     
-class CAN_SHOOT():
-    def shoot(self, target):
-        target.hurt(self.damage)
-        return f"You shoot the {target.name} with the {self.name}"
+
+"""
+These are functions that manipulate class methods, allowing for traits rather than inheritance.
+"""
+def hasattr(obj:object, name:str):
+    return name in obj.__dict__
+
+def get_class(class_path:str) -> type:
+    module_name, class_name = class_path.rsplit('.', 1)
+    module = importlib.import_module(module_name, package="classes")
+    cls = getattr(module, class_name)
+    return cls
+
+def get_class_methods(cls:type) -> list[classmethod]:
+    methods = []
+    for name, attr in cls.__dict__.items():
+        if inspect.isfunction(attr) or inspect.ismethod(attr):
+            methods.append((name, attr))
+    return methods
+
+def assert_instance_attributes(cls:type, instance:object):
+    if attrs := cls.req_attributes:
+        for attr in attrs:
+            if not hasattr(instance, attr):
+                raise MissingAttributeException(instance, attr)
+
+def add_methods_to_instance(instance:object, method_list:list):
+    for (name, method) in method_list:
+        bound_method = MethodType(method, instance)
+        setattr(instance, name, bound_method)
+
+class MissingAttributeException(Exception):
+    def __init__(self, obj, attr) -> None:
+        super().__init__(f"Object {obj} is missing attribute '{attr}'")
+
