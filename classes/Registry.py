@@ -21,3 +21,9 @@ class Registry():
     
     def __getitem__(self, id):
         return self.registered[id]
+    
+    def __contains__(self, id:str):
+        return id in self.registered
+    
+    def __getitem__(self, id:str):
+        return self.registered[id]

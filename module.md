@@ -80,8 +80,8 @@ Note that `IM` stands for Individual Module and `TP` stands for Team Project.
 | Jul 3  | 12:40      | IM       | Started on classes, like Registry, Room, and Thing.                                                                                | 0:30          |
 | Jul 3  | 8:00       | IM       | Researched the way that Python classes are assembled, started working towards a trait system as opposed to inheritance.            | 2:30          |
 | Jul 4  | 9:30       | IM       | Continued research, implemented a system that lets me define 'trait' classes with custom methods and give them to Thing instances. | 2:00          |
-| Jul 4  | 12:00      | IM       | Still working on it, the class trait system is working! I'm trying now to implement required attributes for Traits.                | 1:45          |
-|        |            |          |                                                                                                                                    |               |
+| Jul 4  | 12:00      | IM       | Still working on it, the class trait system is working! I'm trying now to implement required attributes for Traits.                | 2:00          |
+| Jul 4  |            |          |                                                                                                                                    |               |
 
 _Note: Add more rows as needed._
 

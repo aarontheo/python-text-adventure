@@ -1,9 +1,9 @@
 import curses
 
-class CurseWindow():
+class CursesWindow():
     def __init__(self, width, height:int, x:int, y:int):
         self.window = curses.newwin(height, width, y, x)
-        self.border = False
+        self.borderwin = curses.newwin(height, width, y, x)
         
     def border(self):
         self.window.border()
@@ -22,7 +22,7 @@ class CurseWindow():
         self.addstr(x, y, string)
         self.refresh()
 
-class Pane(CurseWindow):
+class Pane(CursesWindow):
     def __init__(self, width:int, height:int, x:int, y:int):
         super().__init__(width, height, x, y)
         if width < 3 or height < 3:
@@ -35,3 +35,4 @@ class Pane(CurseWindow):
                 super().addstr(1, 1, *args)
             case _:
                 super()
+

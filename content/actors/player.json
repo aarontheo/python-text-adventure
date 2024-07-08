@@ -1,0 +1,9 @@
+{
+    "traits": ["IS_LIVING", "HAS_HP"],
+    "name": "hero",
+    "desc": "a bold hero",
+    "shortdesc": "a hero",
+    "hp": 20,
+    "maxhp": 20,
+    "damage": 1
+}

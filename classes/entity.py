@@ -18,6 +18,9 @@ class Thing():
         self.name = 'thing'
         self.desc = 'a cool thing'
         self.shortdesc = 'a thing'
+        
+        self.actions = dict()
+        
         with open(json_path, 'r') as file:
             JSON_data = json.load(file)
         
@@ -27,8 +30,19 @@ class Thing():
         trait_names = JSON_data['traits']
         for trait in trait_names:
             self.add_trait(trait)
+    
+    # def get_action(self, verb:str) -> function:
+    #     return self.actions[verb]
+
+    # def get_action(self, verb:str):
+    #     try:
+    #         return self.__getattribute__(verb)
+    #     except:
+    #         return lambda *args: f"I don't know how to {verb} the {self.name}."
             
-    # TODO: fix this so that hasattr() can work properly, this breaks it.
+    # def __getattribute__(self, attr:str):
+    #     return object.__getattribute__(self, attr)
+    
     def __getattr__(self, verb:str):
         return lambda *args: f"I don't know how to {verb} the {self.name}."
     
@@ -41,14 +55,14 @@ class Thing():
         
         # get all methods from the trait class
         methods = get_class_methods(cls)
-        add_methods_to_instance(self, methods)
+        add_methods_to_action_dict(self, methods)
     
     def add_traits(self, traits:list):
         for trait in traits:
             self.add_trait(trait)
     
-    def has_trait(self, trait):
-        return trait in self.traits
+    # def has_trait(self, trait):
+    #     return trait in self.traits
     
     def harm(self, damage:int):
         return f"You attack the {self.name}, to no avail."
@@ -86,6 +100,12 @@ def add_methods_to_instance(instance:object, method_list:list):
     for (name, method) in method_list:
         bound_method = MethodType(method, instance)
         setattr(instance, name, bound_method)
+        
+def add_methods_to_action_dict(instance:Thing, method_list:list):
+    if not hasattr(instance, 'actions'):
+        setattr(instance, 'actions', dict())
+    for (name, method) in method_list:
+        instance.actions[name] = method
 
 class MissingAttributeException(Exception):
     def __init__(self, obj, attr) -> None:
